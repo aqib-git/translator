@@ -29,10 +29,10 @@ class TranslatorController extends Controller
      * Translate string.
      *
      * @param string $text Text to be translated.
-     * @param string $target Target language.
+     * @param null|string $target Target language.
      * @return JsonResponse
      */
-    public function translate(string $text, string $target = null) : JsonResponse
+    public function translate(string $text, ?string $target = null) : JsonResponse
     {
         if (is_null($target)) {
             $target = config('translator.translator_target_language');
